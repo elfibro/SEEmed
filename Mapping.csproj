@@ -1,0 +1,77 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="17.0">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{0F0BF0E5-DE6E-DF41-B684-65336B108A3C}</ProjectGuid>
+		<OutputType>Exe</OutputType>
+		<AssemblyName>Mapping</AssemblyName>
+		<RootNamespace>Mapping</RootNamespace>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<Prefer32Bit>false</Prefer32Bit>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<Prefer32Bit>false</Prefer32Bit>
+	</PropertyGroup>
+	<ItemGroup>		
+		<Reference Include="System" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Altova\Altova.csproj">
+			<Project>{E1E2A79A-12CC-4107-B1BF-E5C58E642B92}</Project>
+			<Name>Altova</Name>
+		</ProjectReference>
+		<ProjectReference Include="..\AltovaXML\AltovaXML.csproj">
+			<Project>{03AAA791-EC2D-4A90-ABBF-45337E52DFD6}</Project>
+			<Name>AltovaXML</Name>
+		</ProjectReference>
+		<ProjectReference Include="..\AltovaFunctions\AltovaFunctions.csproj">
+			<Project>{56AA56BB-A330-4EE5-A3D1-7FDD0963C6D8}</Project>
+			<Name>AltovaFunctions</Name>
+		</ProjectReference>
+		<ProjectReference Include="..\AltovaText\AltovaText.csproj">
+			<Project>{ECC6AD11-5548-46FE-9833-2BD41FA67CC1}</Project>
+			<Name>AltovaText</Name>
+		</ProjectReference>
+		<ProjectReference Include="..\AltovaDB\AltovaDB.csproj">
+			<Project>{61A86C9B-FFAC-468F-9AF6-6AAA2012C607}</Project>
+			<Name>AltovaDB</Name>
+		</ProjectReference>
+		<ProjectReference Include="..\Fichier_texte\Fichier_texte.csproj">
+			<Name>Fichier_texte</Name>
+			<Project>{9686F9DD-DBF5-8349-9C8E-3EAAC49D2AF8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\propal\propal.csproj">
+			<Name>propal</Name>
+			<Project>{6F89BC40-063A-704F-A2C8-8BC71928B0B9}</Project>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="AssemblyInfo.cs"/>
+		<Compile Include="MappingConsole.cs"/>
+
+		<Compile Include="MappingMapToproduct.cs"/>
+		<Compile Include="MappingMapTopropal.cs"/>
+		<Compile Include="MappingMapTodolibarr2.cs"/>
+		<Compile Include="vmf_vmf1_entretorsultat.cs"/>
+		<Compile Include="vmf_vmf2_entretorsultat.cs"/>
+		<Compile Include="vmf_vmf3_entretorsultat.cs"/>
+	</ItemGroup>
+
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
